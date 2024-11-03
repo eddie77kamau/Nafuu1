@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uploadfashion</title>
+</head>
+<body>
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+</head>
+<body>
+    <!-- include the navbar  -->
+    {% include 'navbar.html' %}
+
+     <br>
+     <section class="row">
+        <div class="col-md-6 ms-5">
+            <div class="card shadow p-2">
+                <b class="text-success"> {{ message }} </b>
+                <b class="text-danger"> {{ error }} </b>
+                <h1 class="text-warning">Upload your fashion</h1>
+                <form action="/uploadfashion" method="post" enctype="multipart/form-data">
+
+                    <label for="">product Name</label>
+                    <input class="form-control" name="product_name" required>
+                    <br>
+                    <label for="">Product Description</label>
+                    <textarea name="product_desc" id="" class="form-control" required></textarea>
+                    <br>
+                    <label for="">Product Cost</label>
+                    <input type="number" name="product_cost" class="form-control" required>
+                    <br>
+
+                    <label for="">Fashion Category</label>
+                    <select name="product_category" id="" class="form-control" required>
+                        <option value="dresses">Dresses</option>
+                        <option value="handbags">hand bags</option>
+                        <option value="socks">Socks</option>
+                        <option value="belts">Belts</option>
+                        <option value="caps">Caps</option>
+                
+                    </select>
+
+                    <br>
+                    <label for="">product Image</label>
+                    <input type="file" 
+                    class="form-control" 
+                    name="product_image_name"
+                    required>
+
+                    <br>
+                    <input 
+                    type="submit"
+                     class="btn btn-warning"
+                      value="upload/Add products">
+                </form>
+            </div>
+        </div>
+     </section>
+</body>
+</html>
+</body>
+</html>

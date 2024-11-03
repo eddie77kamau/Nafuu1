@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nafuu Stores</title>
+    <!-- css supporting files  -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/lightslider.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <!-- Js supporting files  -->
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/lightslider.js"></script>
+    <script src="../static/js/script.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <!-- insert navbar.html using jinja2 templates  -->
+        {% include 'navbar.html'%}
+
+        <!-- insert carousel.html using jinja2 templates  -->
+        {% include 'carousel.html'%}
+
+
+        <!-- beauty products -->
+        <h3 class="bg-warning mt-3 p-2 text-center text-light">Beauty products</h3>
+        <section class="slider p-4 mb-3">
+            <ul class="cs-hidden autoWidth">
+                <!-- we stored in an item variable called phones  -->
+                <!-- we need to loop all the phones to get a single phone item  -->
+                <!-- each single phone item has index from 0-5 where -->
+                <!-- index 0 = product_id, index 1= product_name, index 2= Product_desc, index 3 = product_cost,  index 4 = product_category , index 5 = product_image_name -->
+                <!-- loop al the phone items  -->
+                <!-- loop all the phone items  -->
+                {% for singlebeauty in beauty %}
+                <li>
+                    <div class="box">
+                        <div class="slide-img">
+                            <img src="../static/images/{{ singlebeauty[5] }}" alt="{{ singlebeauty[1] }}" width="50%"
+                                height="50" />
+                            <!-- put an overlay button  -->
+                            <div class="overlay">
+                                <a href="/single/{{ singlebeauty[0] }}" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+
+                        <div class="detail-box">
+                            {{ singlebeauty[1] }} <br> <b class="text-warning">{{ singlebeauty[3] }}</b>
+                        </div>
+                    </div>
+                </li>
+                <!-- end of for loop  -->
+                {% endfor %}
+
+            </ul>
+        </section>
+
+
+        <!-- phone accessories -->
+        <h3 class="bg-warning mt-3 p-2 text-center text-light">Phone Accessories</h3>
+        <section class="slider p-4 mb-3">
+            <ul class="cs-hidden autoWidth">
+                <!-- we stored in an item variable called phones  -->
+                <!-- we need to loop all the phones to get a single phone item  -->
+                <!-- each single phone item has index from 0-5 where -->
+                <!-- index 0 = product_id, index 1= product_name, index 2= Product_desc, index 3 = product_cost,  index 4 = product_category , index 5 = product_image_name -->
+                <!-- loop al the phone items  -->
+                <!-- loop all the phone items  -->
+                {% for singlephone in phone %}
+                <li>
+                    <div class="box">
+                        <div class="slide-img">
+                            <img src="../static/images/{{ singlephone[5] }}" alt="{{ singlephone[1] }}" width="50%"
+                                height="50" />
+                            <!-- put an overlay button  -->
+                            <div class="overlay">
+                                <a href="/single/{{ singlephone[0] }}" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+
+                        <div class="detail-box">
+                            {{ singlephone[1] }} <br> <b class="text-warning">{{ singlephone[3] }}</b>
+                        </div>
+                    </div>
+                </li>
+                <!-- end of for loop  -->
+                {% endfor %}
+
+            </ul>
+        </section>
+
+         <!-- electronics -->
+         <h3 class="bg-warning mt-3 p-2 text-center text-light">Electronics</h3>
+         <section class="slider p-4 mb-3">
+             <ul class="cs-hidden autoWidth">
+                 <!-- we stored in an item variable called phones  -->
+                 <!-- we need to loop all the phones to get a single phone item  -->
+                 <!-- each single phone item has index from 0-5 where -->
+                 <!-- index 0 = product_id, index 1= product_name, index 2= Product_desc, index 3 = product_cost,  index 4 = product_category , index 5 = product_image_name -->
+                 <!-- loop al the phone items  -->
+                 <!-- loop all the phone items  -->
+                 {% for singleelectronic in electronic %}
+                 <li>
+                     <div class="box">
+                         <div class="slide-img">
+                             <img src="../static/images/{{ singleelectronic[5] }}" alt="{{ singleelectronic[1] }}" width="50%"
+                                 height="50" />
+                             <!-- put an overlay button  -->
+                             <div class="overlay">
+                                 <a href="/single/{{ singleelectronic[0] }}" class="buy-btn">Buy Now</a>
+                             </div>
+                         </div>
+ 
+                         <div class="detail-box">
+                             {{ singleelectronic[1] }} <br> <b class="text-warning">{{ singleelectronic[3] }}</b>
+                         </div>
+                     </div>
+                 </li>
+                 <!-- end of for loop  -->
+                 {% endfor %}
+ 
+             </ul>
+         </section>
+ 
+
+
+    </div>
+
+    <!-- include the footer  -->
+    <!-- we use jinja2 template  -->
+    {% include 'footer.html'%}    
+</body>
+
+</html>
